@@ -1,0 +1,26 @@
+<html>
+  <head>
+        <title>Phone Verification</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+        {% block head %}
+        {% endblock %}
+    </head>
+
+  <body>
+    <header class="site-home-header">
+       <div class="outer site-header-background no-image">        
+            <div class="inner">
+                <div class="site-header-content">
+                    <h1 class="site-title">
+                        <img class="site-logo" src="https://blog.tiniyo.com/content/images/2020/03/logo.png" alt="Tiniyo Phone Verification">
+                    </h1>
+                    <h2 class="site-description">Phone Verification</h2>
+                    <p class="site-sub-description">How to use Tiniyo <a id="tiniyo-link" href="https://tiniyo.com/dist/index-verify.html#section/Introduction"> VERIFICATION API </a> in real time.</p> 
+                </div>
+            </div>
+        </div>
+    </header>
+    {% block body %} 
+    {% endblock %}
+  </body>
+</html>

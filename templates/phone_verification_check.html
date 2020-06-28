@@ -1,17 +1,17 @@
-<html>
-  <head>
-        <title>Phone Verification Check</title>
-  </head>
-
-  <body>
-        <h1>OTP VERIFICAION:</h1>
-
-        <form action="/phone_verification_check" accept-charset="UTF-8" method="POST">
-          <div>
-            <label>Enter the code you were sent:</label>
-            <input name="otp">
-          </div>
-          <button type="submit">VERIFY</button>
-        </form>
-  </body>
-</html>
+{% extends "base.html" %}
+{% block body %}
+<form action="/phone_verification_check" accept-charset="UTF-8" method="POST">
+  <div class="container">
+    <ul>
+    <li>
+      <div>
+        <input name="otp" placeholder="Enter the OTP code you were sent:" type="text">
+      </div>
+    </li>
+    <li>
+      <button type="submit">VERIFY</button>
+    </li>
+    </ul>
+  </div>
+</form>
+{% endblock %}

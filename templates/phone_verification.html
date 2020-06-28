@@ -1,22 +1,26 @@
-<html>
-  <head>
-        <title>Phone Verification</title>
-        <link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/authy-form-helpers/2.3/form.authy.min.css">
-  </head>
-
-  <body>
-        <h1>Verify your phone number</h1>
-        <form action="/phone_verification" accept-charset="UTF-8" method="POST">
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/authy-form-helpers/2.3/form.authy.min.css">
+{% endblock %}
+{% block body %}
+<form action="/phone_verification" accept-charset="UTF-8" method="POST">
+  <div class="container">
+      <ul>
+      <li>
           <div>
-            <label >Country code:</label>
-            <input name="cc" id="authy-countries"  type="number">
+          <select name="cc" id="authy-countries"  data-show-as="text"></select>
           </div>
+      </li>
+      <li>
           <div>
-            <label>Phone number:</label>
-            <input type="tel" id="phone_number" name="pn" />
+          <input type="tel" id="phone_number" placeholder="Phone Number" name="pn" />
           </div>
-          <button type="submit">Verify</button>
-        </form>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/authy-form-helpers/2.3/form.authy.min.js"></script>
-  </body>
-</html>
+      </li>
+      <li>
+          <button name="button" type="submit">Verify</button>
+      </li>
+      </ul>
+  </div>
+</form> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/authy-form-helpers/2.3/form.authy.min.js"></script>
+{% endblock %}

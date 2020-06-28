@@ -12,14 +12,16 @@ from flask import (
     url_for,
     session,
 )
+
 load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = "ssssh don't tell anyone"
+app.secret_key = "Its a secret"
 
 auth_id= os.getenv('AUTH_ID')
 secret_auth_id= os.getenv('AUTH_SECRET_ID')
 
+#header of the api used.
 def header(x,y):
     auth_id=bytes(x, 'utf-8')
     auth_secret=bytes(y, 'utf-8')
@@ -29,29 +31,22 @@ def header(x,y):
     return header
 
 
-
+#sending request to tiniyo verification api to send Otp 
 def verification_(x,y):
     a={"dst": x+y}
     data=json.dumps(a)
     headers= header(auth_id,secret_auth_id)
     response = requests.post("https://api.tiniyo.com/v1/Account/"+auth_id+"/Verifications", data=data, headers=headers)
-    data = response.json()
-    print(data)
-    print(response)
-    print("verification")
     return response
 
+#sending request to check otp verification status at tiniyo verification check api
 def verification_check(x,y,otp):
     a={"dst": x+y}
     b={"code": otp}
     c={**b,**a}
-    data1 = json.dumps(c)
+    data = json.dumps(c)
     headers= header(auth_id,secret_auth_id)
-    response = requests.post("https://api.tiniyo.com/v1/Account/"+auth_id+"/VerificationsCheck", data=data1, headers=headers)
-    data1 = response.json()
-    print(data1)
-    print(response)
-    print("check")
+    response = requests.post("https://api.tiniyo.com/v1/Account/"+auth_id+"/VerificationsCheck", data=data, headers=headers)
     if response.status_code==200:
         return 1
            
@@ -60,13 +55,13 @@ def verification_check(x,y,otp):
 @app.route("/phone_verification", methods=["GET","POST"])
 def phone_verification():
     if request.method =="POST":
-        cc = request.values.get('cc')
-        pn = request.values.get('pn')
+        country_code = request.values.get('cc')
+        phone_number = request.values.get('pn')
         
-        session['country_code'] = cc
-        session['phone_number'] = pn
+        session['country_code_session'] = country_code
+        session['phone_number_session'] = phone_number
 
-        verification_(cc,pn)
+        verification_(country_code,phone_number)
         
         return redirect(url_for("phone_verification_check"))
         
@@ -78,8 +73,8 @@ def phone_verification():
 def phone_verification_check():
     if request.method =="POST":
         otp = request.values.get("otp")
-        country_code = session.get('country_code')
-        phone_number = session.get('phone_number')   
+        country_code = session.get('country_code_session')
+        phone_number = session.get('phone_number_session')   
         if(verification_check(country_code,phone_number,otp))==1:
             return redirect(url_for("success"))
 

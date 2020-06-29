@@ -47,7 +47,8 @@ def verification_check(x,y,otp):
     data = json.dumps(c)
     headers= header(auth_id,secret_auth_id)
     response = requests.post("https://api.tiniyo.com/v1/Account/"+auth_id+"/VerificationsCheck", data=data, headers=headers)
-    if response.status_code==200:
+    data= response.json()
+    if data['status']=='success':
         return 1
            
 

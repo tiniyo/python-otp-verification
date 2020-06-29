@@ -1,21 +1,28 @@
 ## Setup
 
-1. Clone this repo, then run the following:
+1. Clone the jwt-go into your go path and change directory to cloned repository.
+
+```bash
+$ git clone https://github.com/tiniyo-api/python-otp-verification.git
+$ cd python-otp-verification
+```
+2. Setting up Virtual Environment
 
 ```bash
 virtualenv env
 source env/bin/activate
 pip install -r requirements.txt
 ```
-2. Create your Account on **TINIYO** and grab your API Key: 
-<https://www.tiniyo.com>
+2. Create your Free **TINIYO** Account and grab your **"API Key"**: <https://www.tiniyo.com>
 
 
 3. Copy ```.env.example``` to ```.env``` and update it with your **Tiniyo** credentials.
 
 
-## Running
+4. Run the ```Phoneverify.py``` in your console.
 
-1. Run the ```Phoneverify.py``` in your console.
+```python
+Phoneverify.py
+```
 
-2. Navigate to localhost:5000/phone_verification to try it out!
+5. Navigate to <http://localhost:5000/phone_verification> to try it out!

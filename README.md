@@ -9,31 +9,27 @@ This repository allows, to create a phone number verification using sms/call OTP
 
 ## Setup
 
-1. Clone the jwt-go into your go path and change directory to cloned repository.
+- Clone the jwt-go into your go path and change directory to cloned repository.
 
 ```bash
 $ git clone https://github.com/tiniyo-api/python-otp-verification.git
 $ cd python-otp-verification
 ```
-2. Setting up Virtual Environment
+- Setting up Virtual Environment
 
 ```bash
 virtualenv env
 source env/bin/activate
 pip install -r requirements.txt
 ```
-2. Create your Free **TINIYO** Account and grab your **"API Key"**: <https://www.tiniyo.com>
+- Create your Free **TINIYO** Account and grab your **"API Key"**: <https://www.tiniyo.com>
 
+- Copy ```.env.example``` to ```.env``` and update it with your **Tiniyo** credentials.
 
-3. Copy ```.env.example``` to ```.env``` and update it with your **Tiniyo** credentials.
-
-
-4. Run the ```Phoneverify.py``` in your console.
+- Run the ```Phoneverify.py``` in your console.
 
 ```python
 Phoneverify.py
 ```
 
-5. Navigate to <http://localhost:5000/phone_verification> to try it out!
-
-For Details, please visit https://medium.com/@madhav_21655/phone-verification-for-python-developer-with-tiniyo-8b627ac63c4f
+*Navigate to <http://localhost:5000/phone_verification> to try it out!

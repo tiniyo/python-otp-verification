@@ -1,3 +1,6 @@
+# Python-OTP-Verification
+This repository allows, to create a phone number verification using sms/call OTP in python.
+
 ## Setup
 
 1. Clone the jwt-go into your go path and change directory to cloned repository.

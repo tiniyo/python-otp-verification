@@ -4,8 +4,8 @@ This repository allows, to create a phone number verification using sms/call OTP
 ![Python-OTP-Verification](demo/demo.gif)
 
 ## Requirements
- - Python 3.7
- - Create a Free Account at Tiniyo [https://tiniyo.com]
+- Python 3.7
+- Create a Free Account at Tiniyo [https://tiniyo.com]
 
 ## Setup
 

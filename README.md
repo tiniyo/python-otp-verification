@@ -35,3 +35,5 @@ Phoneverify.py
 ```
 
 5. Navigate to <http://localhost:5000/phone_verification> to try it out!
+
+For Details, please visit https://medium.com/@madhav_21655/phone-verification-for-python-developer-with-tiniyo-8b627ac63c4f

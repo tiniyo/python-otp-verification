@@ -1,7 +1,7 @@
 # Python-OTP-Verification
 This repository allows, to create a phone number verification using sms/call OTP in python.
 
-![Python-OTP-Verification](demo/demo.gif)
+![Python-OTP-Verification](demo/demo.gif){:height="700px" width="400px"}
 
 ## Requirements
  - Python 3.7

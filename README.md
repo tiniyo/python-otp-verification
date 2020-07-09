@@ -9,7 +9,7 @@ This repository allows, to create a phone number verification using sms/call OTP
 
 ## Setup
 
-- Clone the jwt-go into your go path and change directory to cloned repository.
+- Clone the python-otp-verification into your go path and change directory to cloned repository.
 
 ```bash
 $ git clone https://github.com/tiniyo-api/python-otp-verification.git
